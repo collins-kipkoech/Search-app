@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 import 'rxjs/add/operator/map';
 
 @Injectable({
@@ -11,11 +12,12 @@ export class ProfileService {
 
   constructor(private http:HttpClient) {
     console.log("service is now ready");
-    this.username = "collins";
+    this.username = "kipkoech-msojo";
     
    }
 
    getProfileInfo(){
-     return this.http.get("https://api.github.com/users/kipkoech-msojo");
+     return this.http.get("https://api.github.com/users/" + this.username + 'ae1ffddc9642bdf0688a9d76f7c381e9d7adb1c6')
+     .map(res => res.json());
    }
 }
