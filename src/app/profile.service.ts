@@ -11,6 +11,11 @@ export class ProfileService {
 
   constructor(private http:HttpClient) {
     console.log("service is now ready");
+    this.username = "collins";
     
+   }
+
+   getProfileInfo(){
+     return this.http.get("https://api.github.com/users/kipkoech-msojo");
    }
 }
