@@ -6,7 +6,18 @@
     
 </head>
 <body>
-    <h1 class="diplay-2">Github Serach App</h1>
+    <h1 class="diplay-2">Github Search App</h1>
+    <div class="container-boby">
+        <!--Search bar area-->
+        <div class="row">
+          <div class="col-md-12">
+            <form class="well">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter github username..." [(ngModel)]="username" name="username" (keyup)="searchUser()" style="text-align:center">
+              </div>
+            </form>
+          </div>
+        </div>
 
 <div *ngIf='profile'>
     <div class="container-fluid">
