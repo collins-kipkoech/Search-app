@@ -8,6 +8,7 @@ import {ProfileService} from '../profile.service';
 })
 export class ProfileComponent implements OnInit {
 profile:any=[];
+repo:any=[];
 
   constructor(private profileService:ProfileService) {
     this.profileService.getProfileInfo().subscribe(profile=>{
@@ -15,10 +16,23 @@ profile:any=[];
       this.profile = profile;
       
       
-    })
+    });
+
+    this.profileService.getRepos().subscribe(repo=>{
+      console.log(repo);
+      this.repo = repo;
+      
+      
+    });
+    
    }
 
   ngOnInit(): void {
   }
+  // searchUser() {
+  //   this.profileService.updateUser(this.username);
+  //   this.profileService.getUser().subscribe(user => {
+  //     this.user = user;
+  //   });
 
 }

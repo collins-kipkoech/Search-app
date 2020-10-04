@@ -7,8 +7,66 @@
 </head>
 <body>
     <h1 class="diplay-2">Github Search App</h1>
-    <div class="container-boby">
-        <!--Search bar area-->
+    
+
+<div *ngIf='profile'>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="" class="image-circle" >
+                <div class="card" style="width:400px">
+                    <img class="card-img-top" src="{{profile.avatar_url}}" alt="profile image" height="400px" width="200px">
+                    <div class="card-body">
+                      <h4 class="card-title">{{profile.name}}</h4>
+                      
+                      <a href="https://github.com/kipkoech-msojo" class="btn btn-primary">See Profile</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-8">
+                <div>
+                    <p>
+                        <span class="label label-info">{{profile.followers}}followers</span>
+                        <span class="label label-success">{{profile.following}}following</span>
+                        <span class="label label-primary">{{profile.public_repos}}public repos</span>
+                        <span class="label label-danger">{{profile.public_gists}}public gists</span>
+                    </p>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item" *ngIf='profile.bio'>Bio Data: {{profile.bio}}</li>
+                    <li class="list-group-item" *ngIf='profile.email'><a href="Emailto:{{profile.email}}">{{profile.email}}</a></li>
+                    <li class="list-group-item" *ngIf='profile.hireable'>Available for hire</li>
+                    <li class="list-group-item" *ngIf='profile.company'>{{profile.company}}</li>
+                    <li class="list-group-item" *ngIf='profile.repos_url'><a href="{{profile.repos_url}}">{{profile.repos_url}}</a></li>
+                </ul>
+               
+                
+            </div>
+            
+        </div>
+    </div>
+    
+</div>
+<div *ngFor="let repo of repos">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9">
+              <h4>
+                <a target="_blank" href="{{repo.html_url}}">{{repo.name}}</a>
+              </h4>
+              <p>{{repo.description}}</p>
+            </div>
+            <div class="col-md-3">
+              <!-- <span class="label label-default">{{repo.watchers}} Watchers</span>
+              <span class="label label-primary">{{repo.forks}} Forks</span> -->
+            </div>
+          </div>
+    </div>
+    
+    <hr>
+</div>
+<!-- <div class="container-boby">
+       
         <div class="row">
           <div class="col-md-12">
             <form class="well">
@@ -17,44 +75,7 @@
               </div>
             </form>
           </div>
-        </div>
-
-<div *ngIf='profile'>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3">
-                <img src="" class="image-circle" >
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="{{profile.avatar_url}}" alt="profile image" height="400px" width="200px">
-                    <div class="card-body">
-                      <h4 class="card-title">{{profile.name}}</h4>
-                      <p class="card-text">{{profile.bio}}</p>
-                      <a href="https://github.com/kipkoech-msojo" class="btn btn-primary">See Profile</a>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-md-5">
-                <ul class="list-group">
-                    <li class="list-group-item" *ngIf='profile.bio'>{{profile.bio}}</li>
-                    <li class="list-group-item" *ngIf='profile.email'><a href="Emailto:{{profile.email}}">{{profile.email}}</a></li>
-                    <li class="list-group-item" *ngIf='profile.hireable'>Available for hire</li>
-                    <li class="list-group-item" *ngIf='profile.bio'>{{profile.bio}}</li>
-                </ul>
-                
-            </div>
-            <div class="col-md-4">
-                <div>
-                    <p>
-                        <span class="label label-default">{{profile.followers}}followers</span>
-                        <span class="label label-default">{{profile.following}}following</span>
-                        <span class="label label-default">{{profile.public_repos}}public repos</span>
-                        <span class="label label-default">{{profile.public_gists}}public gists</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+        </div> -->
     
 </body>
 </html>
