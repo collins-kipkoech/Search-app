@@ -7,18 +7,19 @@
         </div>
         <div class="panel-body">
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-md-4">
                     <img src="{{profile.avatar_url}}" class="image-circle" alt="profile image">
                 </div>
-                <div class="col-sm-5">
+                <div class="col-md-4">
                     <ul class="list-group">
                         <li class="list-group-item" *ngIf='profile.bio'>{{profile.bio}}</li>
-                        <li class="list-group-item" *ngIf='profile.bio'>{{profile.bio}}</li>
-                        <li class="list-group-item" *ngIf='profile.bio'>{{profile.bio}}</li>
+                        <li class="list-group-item" *ngIf='profile.email'>{{profile.email}}</li>
+                        <li class="list-group-item" *ngIf='profile.hireable'>Available for hire</li>
                         <li class="list-group-item" *ngIf='profile.bio'>{{profile.bio}}</li>
                     </ul>
                     
                 </div>
+                <div class="col-md-4"></div>
             </div>
         </div>
     </div>

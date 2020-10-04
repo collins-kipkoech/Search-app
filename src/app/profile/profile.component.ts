@@ -7,7 +7,7 @@ import {ProfileService} from '../profile.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-profile:any[];
+profile:any=[];
 
   constructor(private profileService:ProfileService) {
     this.profileService.getProfileInfo().subscribe(profile=>{
