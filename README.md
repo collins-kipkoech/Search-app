@@ -1,28 +1,16 @@
 # SearchApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
+Description:
+Github search app is an application for viewing github account for users. You can view profile and repositories that a user has in his account.
 
-## Development server
+Links
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Repo Link: https://github.com/kipkoech-msojo/Search-app
 
-## Code scaffolding
+figma link: https://www.figma.com/file/dMVAKiaGVuW4usD9W5Ml4A/Github-search-app?node-id=0%3A1
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Screenshoots
 
-## Build
+![image](https://user-images.githubusercontent.com/68596898/95019538-a50a0a80-066e-11eb-9ee5-fc501e4ee2e7.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# Search-app
+![image](https://user-images.githubusercontent.com/68596898/95019557-bb17cb00-066e-11eb-84a0-3686e0694190.png)
