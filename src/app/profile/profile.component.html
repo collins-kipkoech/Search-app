@@ -6,11 +6,15 @@
     
 </head>
 <body>
-    <h1 class="diplay-2">Github Search App</h1>
+    <h1 class="diplay-2 text-primary">Github Search App</h1>
+    <form action="" class="search-form">
+        <input type="text" class="form-control" placeholder="search" [(ngModel)]='username'
+        (keyUp)='findProfile()'>
+    </form>
     
 
 <div *ngIf='profile'>
-    <div class="container-fluid">
+    <div class="container-fluid bg-info">
         <div class="row">
             <div class="col-md-4">
                 <img src="" class="image-circle" >
@@ -24,21 +28,23 @@
                   </div>
             </div>
             <div class="col-md-8">
-                <div>
-                    <p>
-                        <span class="label label-info">{{profile.followers}}followers</span>
-                        <span class="label label-success">{{profile.following}}following</span>
-                        <span class="label label-primary">{{profile.public_repos}}public repos</span>
-                        <span class="label label-danger">{{profile.public_gists}}public gists</span>
-                    </p>
-                </div>
+                
                 <ul class="list-group">
                     <li class="list-group-item" *ngIf='profile.bio'>Bio Data: {{profile.bio}}</li>
                     <li class="list-group-item" *ngIf='profile.email'><a href="Emailto:{{profile.email}}">{{profile.email}}</a></li>
                     <li class="list-group-item" *ngIf='profile.hireable'>Available for hire</li>
-                    <li class="list-group-item" *ngIf='profile.company'>{{profile.company}}</li>
-                    <li class="list-group-item" *ngIf='profile.repos_url'><a href="{{profile.repos_url}}">{{profile.repos_url}}</a></li>
-                </ul>
+                    <li class="list-group-item" *ngIf='profile.company'>Company: {{profile.company}}</li>
+                    <li class="list-group-item" *ngIf='profile.repos_url'>Profile Link:<a href="{{profile.repos_url}}">{{profile.repos_url}}</a></li>
+                    <li class="list-group-item" *ngIf='profile.location'>Location: {{profile.location}}</li>
+                </ul><br><hr>
+                <div>
+                    <p>
+                        <span class="label bg-primary">{{profile.followers}} followers</span><br>
+                        <span class="label bg-success">{{profile.following}} following</span><br>
+                        <span class="label bg-primary">{{profile.public_repos}} public repos</span><br>
+                        <span class="label bg-success">{{profile.public_gists}} public gists</span><br>
+                    </p>
+                </div>
                
                 
             </div>
@@ -48,13 +54,15 @@
     
 </div>
 
-<div class="container=fluid">
+<div class="container-fluid bg-info">
     <div class="row">
         <div class="col-md-12">
-            <h2>Repos</h2>
+            <h2 class="">Repos</h2>
             <div *ngFor='let repo of repos'>
-                <p>{{repo.name}}<a href="{{repo.html_url}}">View this project on github</a></p>
+                <p>{{repo.name}}</p>
+                
                 <p>{{repo.description}}</p>
+                <p><a href="{{repo.html_url}}" class="btn btn-light text-primary">View this project on github</a></p><br><hr>
             </div>
         </div>
     </div>

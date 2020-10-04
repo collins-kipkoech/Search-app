@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { stringify } from 'querystring';
 import {ProfileService} from '../profile.service';
 
 @Component({
@@ -9,6 +10,7 @@ import {ProfileService} from '../profile.service';
 export class ProfileComponent implements OnInit {
 profile:any=[];
 repos:any=[];
+username:string;
 
 
   constructor(private profileService:ProfileService) {
@@ -22,11 +24,15 @@ repos:any=[];
       console.log(repos);
       this.repos = repos;
       
+      
     })
 
     
     
-   }
+  }
+  findProfile(){
+    this.profileService.updateProfile(this.username)
+  }
 
   ngOnInit(): void {
   }
