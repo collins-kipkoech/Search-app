@@ -47,35 +47,18 @@
     </div>
     
 </div>
-<div *ngFor="let repo of repos">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-9">
-              <h4>
-                <a target="_blank" href="{{repo.html_url}}">{{repo.name}}</a>
-              </h4>
-              <p>{{repo.description}}</p>
+
+<div class="container=fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Repos</h2>
+            <div *ngFor='let repo of repos'>
+                <p>{{repo.name}}<a href="{{repo.html_url}}">View this project on github</a></p>
+                <p>{{repo.description}}</p>
             </div>
-            <div class="col-md-3">
-              <!-- <span class="label label-default">{{repo.watchers}} Watchers</span>
-              <span class="label label-primary">{{repo.forks}} Forks</span> -->
-            </div>
-          </div>
+        </div>
     </div>
-    
-    <hr>
 </div>
-<!-- <div class="container-boby">
-       
-        <div class="row">
-          <div class="col-md-12">
-            <form class="well">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Enter github username..." [(ngModel)]="username" name="username" (keyup)="searchUser()" style="text-align:center">
-              </div>
-            </form>
-          </div>
-        </div> -->
     
 </body>
 </html>

@@ -8,7 +8,8 @@ import {ProfileService} from '../profile.service';
 })
 export class ProfileComponent implements OnInit {
 profile:any=[];
-repo:any=[];
+repos:any=[];
+
 
   constructor(private profileService:ProfileService) {
     this.profileService.getProfileInfo().subscribe(profile=>{
@@ -17,13 +18,13 @@ repo:any=[];
       
       
     });
+    this.profileService.getProfileRepos().subscribe(repos=>{
+      console.log(repos);
+      this.repos = repos;
+      
+    })
 
-    this.profileService.getRepos().subscribe(repo=>{
-      console.log(repo);
-      this.repo = repo;
-      
-      
-    });
+    
     
    }
 
