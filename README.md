@@ -5,7 +5,7 @@ Github search app is an application for viewing github account for users. You ca
 
 Links
 
-Repo Link: https://github.com/kipkoech-msojo/Search-app
+Gh-pages Link: https://kipkoech-msojo.github.io/Search-app/
 
 figma link: https://www.figma.com/file/dMVAKiaGVuW4usD9W5Ml4A/Github-search-app?node-id=0%3A1
 
