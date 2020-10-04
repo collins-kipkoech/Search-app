@@ -1,26 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <h1 class="diplay-2">Github Serach App</h1>
 
 <div *ngIf='profile'>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            {{profile.name}}<small>{{profile.login}}</small>
-            <span *ngIf='profile.company'></span>
-        </div>
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="{{profile.avatar_url}}" class="image-circle" alt="profile image">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <img src="" class="image-circle" >
+                <div class="card" style="width:400px">
+                    <img class="card-img-top" src="{{profile.avatar_url}}" alt="profile image" height="400px" width="200px">
+                    <div class="card-body">
+                      <h4 class="card-title">{{profile.name}}</h4>
+                      <p class="card-text">{{profile.bio}}</p>
+                      <a href="https://github.com/kipkoech-msojo" class="btn btn-primary">See Profile</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-5">
+                <ul class="list-group">
+                    <li class="list-group-item" *ngIf='profile.bio'>{{profile.bio}}</li>
+                    <li class="list-group-item" *ngIf='profile.email'><a href="Emailto:{{profile.email}}">{{profile.email}}</a></li>
+                    <li class="list-group-item" *ngIf='profile.hireable'>Available for hire</li>
+                    <li class="list-group-item" *ngIf='profile.bio'>{{profile.bio}}</li>
+                </ul>
+                
+            </div>
+            <div class="col-md-4">
+                <div>
+                    <p>
+                        <span class="label label-default">{{profile.followers}}followers</span>
+                        <span class="label label-default">{{profile.following}}following</span>
+                        <span class="label label-default">{{profile.public_repos}}public repos</span>
+                        <span class="label label-default">{{profile.public_gists}}public gists</span>
+                    </p>
                 </div>
-                <div class="col-md-4">
-                    <ul class="list-group">
-                        <li class="list-group-item" *ngIf='profile.bio'>{{profile.bio}}</li>
-                        <li class="list-group-item" *ngIf='profile.email'>{{profile.email}}</li>
-                        <li class="list-group-item" *ngIf='profile.hireable'>Available for hire</li>
-                        <li class="list-group-item" *ngIf='profile.bio'>{{profile.bio}}</li>
-                    </ul>
-                    
-                </div>
-                <div class="col-md-4"></div>
             </div>
         </div>
     </div>
 </div>
+    
+</body>
+</html>
